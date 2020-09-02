@@ -73,7 +73,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href=".." title="Fire Chicken Games" class="md-header-nav__button md-logo" aria-label="Fire Chicken Games">
       
-  <img src="../images/fcg_logo.jpg" alt="logo">
+  <img src="../images/FCG-Logo-Color.svg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -146,7 +146,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Fire Chicken Games" class="md-nav__button md-logo" aria-label="Fire Chicken Games">
       
-  <img src="../images/fcg_logo.jpg" alt="logo">
+  <img src="../images/FCG-Logo-Color.svg" alt="logo">
 
     </a>
     Fire Chicken Games
@@ -278,8 +278,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#melee-module-integration" class="md-nav__link">
-    Melee Module Integration
+  <a href="#melee-and-shooter-module-integrations" class="md-nav__link">
+    Melee and Shooter Module Integrations
   </a>
   
 </li>
@@ -296,18 +296,30 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="homing_projectiles/" title="Homing Projectile" class="md-nav__link">
+      Homing Projectile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
     
-    <label class="md-nav__link" for="nav-2-2">
+    <label class="md-nav__link" for="nav-2-3">
       Targeting
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Targeting" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
+      <label class="md-nav__title" for="nav-2-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -334,8 +346,8 @@
 
 
   <li class="md-nav__item">
-    <a href="targeting/targeter/" title="Targeter Component" class="md-nav__link">
-      Targeter Component
+    <a href="targeting/targeter/" title="Targeter" class="md-nav__link">
+      Targeter
     </a>
   </li>
 
@@ -346,8 +358,8 @@
 
 
   <li class="md-nav__item">
-    <a href="targeting/targetable/" title="Targetable Component" class="md-nav__link">
-      Targetable Component
+    <a href="targeting/targetable/" title="Targetable" class="md-nav__link">
+      Targetable
     </a>
   </li>
 
@@ -375,8 +387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="homing_projectiles/" title="Homing Projectiles" class="md-nav__link">
-      Homing Projectiles
+    <a href="spawner/" title="Spawner" class="md-nav__link">
+      Spawner
     </a>
   </li>
 
@@ -470,8 +482,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#melee-module-integration" class="md-nav__link">
-    Melee Module Integration
+  <a href="#melee-and-shooter-module-integrations" class="md-nav__link">
+    Melee and Shooter Module Integrations
   </a>
   
 </li>
@@ -495,26 +507,33 @@
                   <h1>Getting Started</h1>
                 
                 <p><img alt="Combat Header" src="../images/combat/splash.png" title="Combat Header" /></p>
-<p>The <strong>Combat</strong> module builds on the <strong>Game Creator Shooter</strong> module to add enhanced, game-ready, combat features:</p>
+<p>The <strong>Combat</strong> module adds enhanced, game-ready, combat features:</p>
 <ul>
-<li>Proximity-based weapon targeting.</li>
-<li>Target indicator.</li>
-<li>Homing projectile.</li>
-<li>Targeting by visibility.</li>
-<li>Support for destructible targets.</li>
-<li>Weapon Stashes (weapon carrying/switching feature).</li>
-<li>Melee targeting integration (requires Melee module).</li>
+<li>Targeting<ul>
+<li>Proximity-based Targeting (with programmatic API, actions, and triggers).</li>
+<li>Point-and-Click Mouse Targeting.</li>
+<li>AI Targeting (requires the Behavior module). </li>
+<li>Mobile UI Button Compatibility for Accessibility Module (by Pivec Labs).</li>
+<li>Customizable Target Indicator.</li>
+<li>Targeting by Visibility.</li>
+</ul>
+</li>
+<li>Spawn System (with optional weighted random selection).</li>
+<li>Weapon Stashes (weapon carrying/switching mechanic).</li>
+<li>Melee and Shooter Integration (requires Melee and/or Shooter modules).  </li>
+<li>Homing Projectile.</li>
+<li>Support for Destructible Targets.</li>
 </ul>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h2>
-<p>Combat is an extension for <strong>Game Creator</strong> and the <strong>Shooter</strong> module. BOTH are required - <strong>Combat</strong> will not work without them.</p>
+<p>Combat is an extension for <strong>Game Creator</strong>. It is required - <strong>Combat</strong> will not work without it.</p>
 <p>They can be purchased from the Unity Asset Store:</p>
 <ul>
 <li><a href="https://assetstore.unity.com/packages/templates/systems/game-creator-89443">Game Creator</a></li>
-<li><a href="https://assetstore.unity.com/packages/templates/systems/shooter-155705">Shooter</a></li>
 </ul>
-<p>The <strong>Melee</strong> module is an optional dependency. Get it here:</p>
+<p>The <strong>Melee</strong> and <strong>Shooter</strong> modules are optional dependencies. Get them here:</p>
 <ul>
-<li><a href="https://assetstore.unity.com/packages/templates/systems/melee-164145">Melee</a>   </li>
+<li><a href="https://assetstore.unity.com/packages/templates/systems/melee-164145">Melee</a></li>
+<li><a href="https://assetstore.unity.com/packages/templates/systems/shooter-155705">Shooter</a>   </li>
 </ul>
 <h2 id="whats-included">What’s Included<a class="headerlink" href="#whats-included" title="Permanent link">#</a></h2>
 <ul>
@@ -529,13 +548,10 @@
 <p><img alt="Enable the Combat module" src="../images/combat/index/installation_2.png" title="Enable the Combat module" /></p>
 <h3 id="step-3-optional-install-the-combat-examples-module">Step 3 (optional): Install the Combat Examples Module<a class="headerlink" href="#step-3-optional-install-the-combat-examples-module" title="Permanent link">#</a></h3>
 <p><img alt="Install the Combat Examples module" src="../images/combat/index/installation_3.png" title="Install the Combat Examples module" /></p>
-<h2 id="melee-module-integration">Melee Module Integration<a class="headerlink" href="#melee-module-integration" title="Permanent link">#</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">New in 0.5.0</p>
-</div>
+<h2 id="melee-and-shooter-module-integrations">Melee and Shooter Module Integrations<a class="headerlink" href="#melee-and-shooter-module-integrations" title="Permanent link">#</a></h2>
 <p>The <strong>Combat</strong> module provides a lightweight integration to allow seamless Shooter/Melee targeting and weapon switching if the Melee module is present.</p>
-<p>To enable the integration, simply enable the <strong>Melee Combat</strong> module included with the <strong>Combat</strong> module.</p>
-<p>Note that there is also a <strong>Melee Combat Examples</strong> module that demonstrates Shooter/Melee targeting and weapon switching.</p>
+<p>To enable the integration, simply enable the included <strong>Combat (Melee)</strong> and/or <strong>Combat (Shooter)</strong> integration modules.</p>
+<p>Note that also included are the <strong>Combat Examples (Melee)</strong> and <strong>Combat Examples (Shooter)</strong> modules that demonstrate Melee/Shooter targeting and weapon switching.</p>
                 
               
               
@@ -569,13 +585,13 @@
           </a>
         
         
-          <a href="targeting/overview/" title="Overview" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="homing_projectiles/" title="Homing Projectile" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                Homing Projectile
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
