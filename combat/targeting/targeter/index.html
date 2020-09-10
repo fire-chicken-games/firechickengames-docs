@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#auto-aim-at-target" class="md-skip">
+        <a href="#aiming" class="md-skip">
           Skip to content
         </a>
       
@@ -305,19 +305,67 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#aiming" class="md-nav__link">
+    Aiming
+  </a>
+  
+    <nav class="md-nav" aria-label="Aiming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#auto-aim-at-target" class="md-nav__link">
     Auto Aim At Target
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#aiming-camera-motor" class="md-nav__link">
+    Aiming Camera Motor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#targeting" class="md-nav__link">
+    Targeting
+  </a>
+  
+    <nav class="md-nav" aria-label="Targeting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    Enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acquire-initial-target" class="md-nav__link">
+    Acquire Initial Target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aiming-camera-motor_1" class="md-nav__link">
+    Aiming Camera Motor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#target-visibility" class="md-nav__link">
     Target Visibility
   </a>
   
-    <nav class="md-nav" aria-label="Target Visibility">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#only-target-visible-to-camera" class="md-nav__link">
@@ -331,7 +379,8 @@
     Only Target Non-Occluded
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Only Target Non-Occluded">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#layers-to-ignore-for-visibility-occlusion" class="md-nav__link">
@@ -344,10 +393,22 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#user-input" class="md-nav__link">
     User Input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-input" class="md-nav__link">
+    Mouse Input
   </a>
   
 </li>
@@ -429,19 +490,67 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#aiming" class="md-nav__link">
+    Aiming
+  </a>
+  
+    <nav class="md-nav" aria-label="Aiming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#auto-aim-at-target" class="md-nav__link">
     Auto Aim At Target
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#aiming-camera-motor" class="md-nav__link">
+    Aiming Camera Motor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#targeting" class="md-nav__link">
+    Targeting
+  </a>
+  
+    <nav class="md-nav" aria-label="Targeting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    Enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acquire-initial-target" class="md-nav__link">
+    Acquire Initial Target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aiming-camera-motor_1" class="md-nav__link">
+    Aiming Camera Motor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#target-visibility" class="md-nav__link">
     Target Visibility
   </a>
   
-    <nav class="md-nav" aria-label="Target Visibility">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#only-target-visible-to-camera" class="md-nav__link">
@@ -455,7 +564,8 @@
     Only Target Non-Occluded
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Only Target Non-Occluded">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#layers-to-ignore-for-visibility-occlusion" class="md-nav__link">
@@ -468,10 +578,22 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#user-input" class="md-nav__link">
     User Input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-input" class="md-nav__link">
+    Mouse Input
   </a>
   
 </li>
@@ -499,20 +621,36 @@ The <strong>Sphere Collider</strong> attached to the same game object (as depict
 Note that the range of the <strong>Targeter</strong> is dictated by the <strong>Radius</strong> property of this collider. 
 The <strong>PlayerTargeter</strong> prefab should be nested under the Game Creator Player object.</p>
 <p><img alt="Targeter component" src="../../../images/combat/targeting/targeter_1.png" title="Targeter component" /></p>
-<h2 id="auto-aim-at-target">Auto Aim At Target<a class="headerlink" href="#auto-aim-at-target" title="Permanent link">#</a></h2>
+<h2 id="aiming">Aiming<a class="headerlink" href="#aiming" title="Permanent link">#</a></h2>
+<h3 id="auto-aim-at-target">Auto Aim At Target<a class="headerlink" href="#auto-aim-at-target" title="Permanent link">#</a></h3>
 <p>Automatically aiming at a target can be disabled with the <strong>Auto Aim At Target</strong> option - the character will still be locked on to it, but will not fix their weapon on it while aiming. 
 This may be desirable for some games.</p>
-<h2 id="target-visibility">Target Visibility<a class="headerlink" href="#target-visibility" title="Permanent link">#</a></h2>
+<h3 id="aiming-camera-motor">Aiming Camera Motor<a class="headerlink" href="#aiming-camera-motor" title="Permanent link">#</a></h3>
 <div class="admonition tip">
-<p class="admonition-title">New in 0.4.0</p>
+<p class="admonition-title">New in 0.9.0</p>
 </div>
+<p>If set, the camera will switch to this alternative camera motor while <strong>aiming</strong> at a target.</p>
+<h2 id="targeting">Targeting<a class="headerlink" href="#targeting" title="Permanent link">#</a></h2>
+<h3 id="enabled">Enabled<a class="headerlink" href="#enabled" title="Permanent link">#</a></h3>
+<p>If enabled, targeting will be enabled when the scene loads.</p>
+<h3 id="acquire-initial-target">Acquire Initial Target<a class="headerlink" href="#acquire-initial-target" title="Permanent link">#</a></h3>
+<p>If enabled, the closest target will be automatically set if one is available.</p>
+<div class="admonition tip">
+<p class="admonition-title">This is useful to disable for mouse targeting</p>
+</div>
+<h3 id="aiming-camera-motor_1">Aiming Camera Motor<a class="headerlink" href="#aiming-camera-motor_1" title="Permanent link">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">New in 0.9.0</p>
+</div>
+<p>If set, the camera will switch to this alternative camera motor while <strong>targeting</strong> A target.</p>
+<h3 id="target-visibility">Target Visibility<a class="headerlink" href="#target-visibility" title="Permanent link">#</a></h3>
 <p>The component's target visibility options allow for target selection to be limited by what the camera can see.</p>
 <h3 id="only-target-visible-to-camera">Only Target Visible To Camera<a class="headerlink" href="#only-target-visible-to-camera" title="Permanent link">#</a></h3>
 <p>If enabled, only targets possibly visible to the camera (i.e. in its view frustum) are targetable.</p>
 <h3 id="only-target-non-occluded">Only Target Non-Occluded<a class="headerlink" href="#only-target-non-occluded" title="Permanent link">#</a></h3>
 <p>If enabled, targets hidden behind objects are not targetable. </p>
 <p>Note that this option is turned off by default because the player and targetables need to be on dedicated layers which requires manual configuration.</p>
-<h3 id="layers-to-ignore-for-visibility-occlusion">Layers To Ignore For Visibility Occlusion<a class="headerlink" href="#layers-to-ignore-for-visibility-occlusion" title="Permanent link">#</a></h3>
+<h4 id="layers-to-ignore-for-visibility-occlusion">Layers To Ignore For Visibility Occlusion<a class="headerlink" href="#layers-to-ignore-for-visibility-occlusion" title="Permanent link">#</a></h4>
 <p>The layers to ignore when determining target visibility when <a href="../targetable/#Only Target Non-Occluded">Only Target Non-Occluded</a> is enabled.</p>
 <p>Typically, there should be two layers:</p>
 <ul>
@@ -521,6 +659,8 @@ This may be desirable for some games.</p>
 </ul>
 <h2 id="user-input">User Input<a class="headerlink" href="#user-input" title="Permanent link">#</a></h2>
 <p>The <strong>User Input</strong> section of the <strong>Targeter</strong> component allows the keys that control target locking and switching to be customized.</p>
+<h2 id="mouse-input">Mouse Input<a class="headerlink" href="#mouse-input" title="Permanent link">#</a></h2>
+<p>The <strong>Mouse Input</strong> section of the <strong>Targeter</strong> component allows targeting by left clicking to be toggled on or off.</p>
                 
               
               
