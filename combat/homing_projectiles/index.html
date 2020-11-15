@@ -398,12 +398,25 @@
                 
                   <h1>Homing Projectile</h1>
                 
-                <p>As the name suggests, a <strong>Homing Projectile</strong> seeks its target even if the weapon firing the projectile is not pointed directly at the intended target. </p>
-<p>Setup is trivial. Simply attach the Combat module’s <strong>Homing Projectile</strong> component to any projectile. 
-The component’s <strong>Ammo Rigidbody</strong> property will be automatically set if the game object contains a Rigidbody component. </p>
-<p>The <strong>Propulsion</strong> settings control the movement behavior of the projectile:</p>
+                <p>As the name suggests, a <strong>Homing Projectile</strong> seeks its target even if the weapon firing the projectile is not pointed directly at the intended target. 
+Setup is trivial. Simply attach the Combat module’s <strong>Homing Projectile</strong> component to any potential projectile. </p>
 <ul>
-<li><strong>Seconds To Wait Before Propelling</strong>: Delays the propulsion of the projectile by a number of seconds. A value of 0 (or less) results in no delay.</li>
+<li>
+<p><strong>Target Mode</strong>: This setting determines how the target of the projectile is set. </p>
+<ul>
+<li><strong>Targeter</strong>: The projectile's target comes from the <strong>Targeter</strong> component attached to the game object specified here. </li>
+<li><strong>Target</strong>: The projectile's target comes directly from the this setting (and does not require a Combat module <strong>Targeter</strong> component).</li>
+</ul>
+</li>
+<li>
+<p><strong>Ammo Rigidbody</strong>: This property will be automatically set if the game object contains a Rigidbody component. </p>
+</li>
+</ul>
+<p>The <strong>Propulsion</strong> settings control the movement behavior of the projectile...</p>
+<ul>
+<li><strong>Target Offset</strong>: This property offsets the location of the projectile's target... useful in cases where the target's transform root is not visually where the projectile should travel to.</li>
+<li><strong>Propulsion Delay (seconds)</strong>: Delays the propulsion of the projectile by a number of seconds. A value of 0 (or less) results in no delay.</li>
+<li><strong>Propel For (seconds)</strong>: Stop propelling the projectile after a number of seconds - should be greater than Propulsion Delay.</li>
 <li><strong>Maximum Turn Angle</strong>: The maximum angle, in degrees, that the projectile will turn while homing in on its target.</li>
 <li><strong>Velocity</strong>: How fast the projectile moves toward its target - this should likely match or exceed the max velocity of the projectile ammo if propulsion is delayed. If there is no delay, this setting will effectively override the projectile ammo’s min/max velocity.</li>
 </ul>
