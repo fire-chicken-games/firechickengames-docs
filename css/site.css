@@ -1,3 +1,7 @@
 .md-nav--primary > .md-nav__title {
     display: none;
 }
+
+img.component-example {
+    width: 70%;
+}
