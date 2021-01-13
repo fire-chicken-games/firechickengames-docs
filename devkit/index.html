@@ -39,6 +39,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
     
       <link rel="stylesheet" href="../css/site.css">
@@ -967,10 +969,13 @@ as well as a <code>GameObject</code> abstraction component to add flexibility to
 </table>
 <h3 id="animationbase">AnimationBase<a class="headerlink" href="#animationbase" title="Permanent link">#</a></h3>
 <p>This is an abstract component that other animation components inherit:</p>
-<pre><code class="c#">using FireChickenGames.DevKit.Components;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Components</span><span class="p">;</span>
 
-public class AnimationExample : AnimationBase { }
-</code></pre>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AnimationExample</span> <span class="p">:</span> <span class="n">AnimationBase</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>It provides an extensible base implementation that other animation components use to accomplish specific animation effects.</p>
 <h3 id="animate">Animate<a class="headerlink" href="#animate" title="Permanent link">#</a></h3>
@@ -1046,8 +1051,12 @@ This component is mainly for to demonstrate how color tweening works.</p>
 </tbody>
 </table>
 <h3 id="on-collision-apply-transform">On Collision Apply Transform<a class="headerlink" href="#on-collision-apply-transform" title="Permanent link">#</a></h3>
+<p>This component sets the colliding <code>Transform</code> to the specified <code>Transform</code>'s position, scale, and rotation.
+This is useful for "teleporting" a <code>GameObject</code>, e.g. when a player falls to its death. </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-apply-transform.png"><img alt="On Collision Apply Transform component" class="component-example" src="../images/devkit/components/on-collision-apply-transform.png" /></a></p>
 <h3 id="on-collision-set-parent">On Collision Set Parent<a class="headerlink" href="#on-collision-set-parent" title="Permanent link">#</a></h3>
+<p>This component simply sets the colliding <code>GameObject</code>'s parent.
+This is useful for implementing moving platforms that allow the player to move with the platform.  </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-set-parent.png"><img alt="On Collision Set Parent component" class="component-example" src="../images/devkit/components/on-collision-set-parent.png" /></a></p>
 <h2 id="other-components">Other Components<a class="headerlink" href="#other-components" title="Permanent link">#</a></h2>
 <table>
@@ -1089,27 +1098,44 @@ It should only ever be attached to a <code>GameObject</code> programmatically an
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-destroy.png"><img alt="On Collision Destroy component" class="component-example" src="../images/devkit/components/on-collision-destroy.png" /></a></p>
 <h3 id="subject-base">Subject Base<a class="headerlink" href="#subject-base" title="Permanent link">#</a></h3>
 <p>Using the <code>SubjectBase</code> component is as easy as extending your custom component class with it:</p>
-<pre><code class="c#">using FireChickenGames.DevKit.Components;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Components</span><span class="p">;</span>
 
-public class SubjectExample : SubjectBase { }
-</code></pre>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SubjectExample</span> <span class="p">:</span> <span class="n">SubjectBase</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Though helpful, the base class is not necessary to use the <code>Subject</code> field:</p>
-<pre><code class="c#">using FireChickenGames.DevKit.Core;
-using UnityEngine;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Core</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
 
-public class SubjectExample : MonoBehaviour
-{
-    public Subject subject = Subject.AsSelf();
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SubjectExample</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">Subject</span> <span class="n">subject</span> <span class="p">=</span> <span class="n">Subject</span><span class="p">.</span><span class="n">AsSelf</span><span class="p">();</span>
 
-    void Start()
-    {
-        // If this initialization step is missed, the subject.GameObject will
-        // be null either &quot;Self&quot; or &quot;Parent&quot; is selected in the inspector.
-        subject.SetSelf(gameObject);
-    }
-}
-</code></pre>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// If this initialization step is missed, the subject.GameObject will</span>
+        <span class="c1">// be null either &quot;Self&quot; or &quot;Parent&quot; is selected in the inspector.</span>
+        <span class="n">subject</span><span class="p">.</span><span class="n">SetSelf</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 
 <h4 id="subject-options">Subject Options<a class="headerlink" href="#subject-options" title="Permanent link">#</a></h4>
 <p><a data-lightbox="component-example" href="../images/devkit/components/subject-base-example.png"><img alt="Subject-based example component" class="component-example" src="../images/devkit/components/subject-base-example.png" /></a></p>
@@ -1141,147 +1167,215 @@ public class SubjectExample : MonoBehaviour
 </table>
 <h4 id="programmatic-access">Programmatic Access<a class="headerlink" href="#programmatic-access" title="Permanent link">#</a></h4>
 <p>Accessing the <code>Subject</code> in the <code>GameObject</code> via the <code>subject.GameObject</code>:</p>
-<pre><code class="c#">var gameObjectName = subject.GameObject.name;
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">gameObjectName</span> <span class="p">=</span> <span class="n">subject</span><span class="p">.</span><span class="n">GameObject</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
 
-<p>It is also possible to get components in a variety of ways from the <code>Subject</code>:</p>
-<pre><code class="c#">subject.GetComponent&lt;Collider&gt;();
-subject.TryGetComponent&lt;Collider&gt;();
-</code></pre>
+<p>It is also possible to get components in a variety of ways from the <code>Subject</code>, 
+similar to how components are retrieved in <code>MonoBehavior</code> classes:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">subject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Collider</span><span class="p">&gt;();</span>
+<span class="n">subject</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">&lt;</span><span class="n">Collider</span><span class="p">&gt;();</span>
+</code></pre></div>
+</td></tr></table>
 
-<p>A third way, unique to <code>DevKit</code>, is available that gets OR adds a component if does not exist on the <code>Subject</code>.
-This tiny bit of code </p>
-<pre><code class="c#">using FireChickenGames.DevKit.Components;
-using UnityEngine;
+<p>A third way, unique to <code>DevKit</code>, is available that gets OR adds a component if does not exist on the <code>Subject</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Components</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
 
-public class SubjectExample : SubjectBase
-{
-    public Collider myCollider;
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SubjectExample</span> <span class="p">:</span> <span class="n">SubjectBase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">Collider</span> <span class="n">myCollider</span><span class="p">;</span>
 
-    void Start()
-    {
-        myCollider = subject.GetOrAddComponent(myCollider);
-    }
-}
-</code></pre>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">myCollider</span> <span class="p">=</span> <span class="n">subject</span><span class="p">.</span><span class="n">GetOrAddComponent</span><span class="p">(</span><span class="n">myCollider</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>The <code>Subject</code> can be programmatically switched: </p>
-<pre><code class="c#">subject.SwitchToGameObject();
-subject.SwitchToSelf();
-subject.SwitchToParent();
-subject.SwitchToPlayer();
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">subject</span><span class="p">.</span><span class="n">SwitchToGameObject</span><span class="p">();</span>
+<span class="n">subject</span><span class="p">.</span><span class="n">SwitchToSelf</span><span class="p">();</span>
+<span class="n">subject</span><span class="p">.</span><span class="n">SwitchToParent</span><span class="p">();</span>
+<span class="n">subject</span><span class="p">.</span><span class="n">SwitchToPlayer</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <h2 id="animation-api">Animation API<a class="headerlink" href="#animation-api" title="Permanent link">#</a></h2>
 <p>To use the animation API, be sure to import the <code>Tweening</code> namespace:</p>
-<pre><code class="c#">using FireChickenGames.DevKit.Tweening; 
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Tweening</span><span class="p">;</span> 
+</code></pre></div>
+</td></tr></table>
 
 <h3 id="game-objects">Game Objects<a class="headerlink" href="#game-objects" title="Permanent link">#</a></h3>
 <p>The animation API uses a builder pattern to animate a <code>GameObject</code>:</p>
-<pre><code class="c#">var tween = transform.Tween();
-tween.Position(new Vector3(0, 3, 0))
-tween.Run();
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">tween</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">();</span>
+<span class="n">tween</span><span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="n">tween</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Or using the fluent style:</p>
-<pre><code class="c#">transform.Tween()
-    .Position(new Vector3(0, 3, 0))
-    .Run();
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Method calls can be chained together <code>GameObject</code>:</p>
-<pre><code class="c#">transform.Tween()
-    .Position(new Vector3(0, 3, 0))
-    .Scale(new Vector3(2, 2, 2))
-    .Rotation(new Vector3(0, 180, 0))
-    .Run();
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Rotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>An action can be called in the builder's run method to, for example, set the <code>GameObject</code> to inactive (or some other operation):</p>
-<pre><code class="c#">transform.Tween()
-    .Position(new Vector3(0, 3, 0))
-    .Run(() =&gt; gameObject.SetActive(false));
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Tweens can be executed in a sequence by passing a <code>boolean</code> to the <code>Run</code> method:</p>
-<pre><code class="c#">transform.Tween()
-    .Position(new Vector3(0, 3, 0))
-    .Position(new Vector3(0, 0, 0))
-    .Run(true);
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>A third parameter combination exists for the <code>Run</code> method that allows for sequential tweens and:</p>
-<pre><code class="c#">transform.Tween()
-    .Position(new Vector3(0, 3, 0))
-    .Position(new Vector3(0, 0, 0))
-    .Run(true, () =&gt; gameObject.SetActive(false));
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">true</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Shortcuts to move, scale, and rotate a <code>Transform</code> if the builder pattern is not desirable, are also available:</p>
-<pre><code class="c#">transform.TweenPosition(new Vector3(0, 3, 0));
-transform.TweenScale(new Vector3(2, 2, 2));
-transform.TweenRotation(new Vector3(0, 180, 0));
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+<span class="n">transform</span><span class="p">.</span><span class="n">TweenScale</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
+<span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
 
 <p><code>Quaternion</code> rotation of a <code>Transform</code> is also possible:</p>
-<pre><code class="c#">transform.Tween()
-    .Rotation(Quaternion.Euler(0, 180, 0))
-    .Run();
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
 
-// or...
+<span class="c1">// or...</span>
 
-transform.TweenRotation(Quaternion.Euler(0, 180, 0));
-</code></pre>
+<span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
 
 <h3 id="ui-elements">UI Elements<a class="headerlink" href="#ui-elements" title="Permanent link">#</a></h3>
 <p>In addition to the <code>Transform</code> tween options. For example, a UI component can be rotated like a regular <code>Transform</code>:</p>
-<pre><code class="c#">transform.TweenRotation(new Vector3(0, 360, 0));
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">360</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Note that resizing is a separate operation from scaling for a <code>RectTransform</code>:</p>
-<pre><code class="c#">rectTransform.TweenSize(new Vector2(500, 500));
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rectTransform</span><span class="p">.</span><span class="n">TweenSize</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span><span class="m">500</span><span class="p">,</span> <span class="m">500</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
 
-<div class="admonition tip">
-<p class="admonition-title">Inside of a custom UI component, the <code>Transform</code> can be accessed as a <code>RectTransform</code>.</p>
-<p><code>(transform as RectTransform).TweenSize(new Vector2(500, 500));</code> </p>
-</div>
+<p>Inside of a custom UI component, the <code>Transform</code> can be accessed as a <code>RectTransform</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">transform</span> <span class="k">as</span> <span class="n">RectTransform</span><span class="p">).</span><span class="n">TweenSize</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span><span class="m">500</span><span class="p">,</span> <span class="m">500</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table>
+
 <h3 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">#</a></h3>
 <p>If a <code>Renderer</code> component has <code>Material</code>, the color and alpha can be animated:</p>
-<pre><code class="c#">renderer.Tween()
-    .Color(Color.red)
-    .Alpha(0.5f)
-    .Run();
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">renderer</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">Alpha</span><span class="p">(</span><span class="m">0.5f</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <div class="admonition tip">
 <p class="admonition-title">Note that the <code>Material</code> must have a its <code>Rendering Mode</code> set to <code>Transparent</code> for the alpha transition have an effect.</p>
 </div>
 <p>The builder pattern is optional for these operations:</p>
-<pre><code class="c#">renderer.TweenColor(Color.red);
-renderer.TweenAlpha(0.5f);
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">renderer</span><span class="p">.</span><span class="n">TweenColor</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">);</span>
+<span class="n">renderer</span><span class="p">.</span><span class="n">TweenAlpha</span><span class="p">(</span><span class="m">0.5f</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
 
 <h3 id="customizing-animations">Customizing Animations<a class="headerlink" href="#customizing-animations" title="Permanent link">#</a></h3>
 <p>A custom animation duration and <code>Ease</code> can be used in all of the tween animation API operations.</p>
 <h4 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h4>
 <p>The length of a tween's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration :</p>
-<pre><code class="c#">var animationDuration = 2.0f; // 2 seconds
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">animationDuration</span> <span class="p">=</span> <span class="m">2.0f</span><span class="p">;</span> <span class="c1">// 2 seconds</span>
 
-transform.Tween(animationDuration)
-    .Position(new Vector3(0, 3, 0))
-    .Run();
-</code></pre>
+<span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">(</span><span class="n">animationDuration</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Alternatively, the <code>Ease</code> can be supplied to individual tween method calls, making it apply only to a specific tween:</p>
-<pre><code class="c#">transform.TweenPosition(new Vector3(0, 3, 0), 0.5f, ease);
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="m">0.5f</span><span class="p">,</span> <span class="n">ease</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
 
 <h4 id="easing">Easing<a class="headerlink" href="#easing" title="Permanent link">#</a></h4>
 <p>Be sure to import the <code>Ease</code> namespace when specifying an Ease:</p>
-<pre><code class="c#">using FireChickenGames.DevKit.Tweening.Ease; 
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Tweening.Ease</span><span class="p">;</span> 
+</code></pre></div>
+</td></tr></table>
 
 <p>An <code>Ease</code> has a <code>EaseFunctionType</code> and an <code>EaseDirectionType</code>. 
 The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
@@ -1367,18 +1461,23 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
 </tbody>
 </table>
 <p>Creating an ease is simple:</p>
-<pre><code class="c#">var ease = new Ease(EaseFunctionType.Quadratic, EaseDirectionType.Out);
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">ease</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Ease</span><span class="p">(</span><span class="n">EaseFunctionType</span><span class="p">.</span><span class="n">Quadratic</span><span class="p">,</span> <span class="n">EaseDirectionType</span><span class="p">.</span><span class="n">Out</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>The <code>Ease</code> can be supplied either to the builder (making it the default ease for all of the builder's tweens):</p>
-<pre><code class="c#">transform.Tween(ease)
-    .Position(new Vector3(0, 3, 0))
-    .Run();
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">(</span><span class="n">ease</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
 <p>Alternatively, the <code>Ease</code> can be supplied to the individual tween method calls, making it apply only to a specific tween:</p>
-<pre><code class="c#">transform.TweenPosition(new Vector3(0, 3, 0), 0.5f, ease);
-</code></pre>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="m">0.5f</span><span class="p">,</span> <span class="n">ease</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
@@ -1500,13 +1599,13 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
       
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       
-        <script src="../js/tables.js"></script>
-      
-        <script src="../js/lightbox2.js"></script>
+        <script src="../js/config.js"></script>
       
     
   </body>

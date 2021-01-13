@@ -39,6 +39,8 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
     
       <link rel="stylesheet" href="../../css/site.css">
@@ -865,9 +867,11 @@ This setting, in combination with <em>Skip Chance</em> can add variability to sp
 <p>If enabled, a spawnable is randomly spawned using a simple weight-based selection formula.</p>
 <p>For example, if spawnable 1 has a weight of <code>25</code> and spawnable 2 has a weight of <code>100</code>, 
 spawnable 1 will be spawned <code>20%</code> of the time and spawnable 2 will be spawned <code>80%</code> of the time.</p>
-<pre><code>Spawnable 1: 25 / (25 + 100) = 20%
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Spawnable 1: 25 / (25 + 100) = 20%
 Spawnable 2: 100 / (25 + 100) = 80%
-</code></pre>
+</code></pre></div>
+</td></tr></table>
 
 <h4 id="spawnables">Spawnables<a class="headerlink" href="#spawnables" title="Permanent link">#</a></h4>
 <p>The list of <strong>spawnables</strong> defines which (and how many) objects are spawned by the <strong>Spawner</strong> component. 
@@ -1020,13 +1024,13 @@ Any standard Game Creator trigger can be used to invoke these actions. </p>
       
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       
-        <script src="../../js/tables.js"></script>
-      
-        <script src="../../js/lightbox2.js"></script>
+        <script src="../../js/config.js"></script>
       
     
   </body>

@@ -5,3 +5,16 @@
 img.component-example {
     width: 70%;
 }
+
+.md-nav--secondary > ul > li > a {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.md-nav--secondary .md-nav .md-nav__link  {
+    font-size: 12px;
+}
+
+.md-nav--secondary .md-nav .md-nav__link:before  {
+    content: '•';
+}
