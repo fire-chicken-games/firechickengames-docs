@@ -11,13 +11,8 @@ img.component-example {
     font-size: 13px;
 }
 
-.md-typeset__table tbody {
-    font-size: 11px;
-}
-
 .md-typeset__table tbody > tr > td:first-child {
     font-weight: bold;
-
 }
 
 .md-nav--secondary .md-nav .md-nav__link  {

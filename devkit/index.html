@@ -39,8 +39,6 @@
     
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
-    
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
     
       <link rel="stylesheet" href="../css/site.css">
@@ -251,14 +249,14 @@
         
           <li class="md-nav__item">
   <a href="#on-collision-animate" class="md-nav__link">
-    On Collision Animate
+    On Collision → Animate
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#on-collision-move-to" class="md-nav__link">
-    On Collision Move To
+    On Collision → Move To
   </a>
   
 </li>
@@ -292,14 +290,14 @@
         
           <li class="md-nav__item">
   <a href="#on-collision-apply-transform" class="md-nav__link">
-    On Collision Apply Transform
+    On Collision → Apply Transform
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#on-collision-set-parent" class="md-nav__link">
-    On Collision Set Parent
+    On Collision → Set Parent
   </a>
   
 </li>
@@ -333,7 +331,7 @@
         
           <li class="md-nav__item">
   <a href="#on-collision-destroy" class="md-nav__link">
-    On Collision Destroy
+    On Collision → Destroy
   </a>
   
 </li>
@@ -716,14 +714,14 @@
         
           <li class="md-nav__item">
   <a href="#on-collision-animate" class="md-nav__link">
-    On Collision Animate
+    On Collision → Animate
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#on-collision-move-to" class="md-nav__link">
-    On Collision Move To
+    On Collision → Move To
   </a>
   
 </li>
@@ -757,14 +755,14 @@
         
           <li class="md-nav__item">
   <a href="#on-collision-apply-transform" class="md-nav__link">
-    On Collision Apply Transform
+    On Collision → Apply Transform
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#on-collision-set-parent" class="md-nav__link">
-    On Collision Set Parent
+    On Collision → Set Parent
   </a>
   
 </li>
@@ -798,7 +796,7 @@
         
           <li class="md-nav__item">
   <a href="#on-collision-destroy" class="md-nav__link">
-    On Collision Destroy
+    On Collision → Destroy
   </a>
   
 </li>
@@ -930,7 +928,7 @@ The components are built on top of an extensible programmatic API.</p>
 </thead>
 <tbody>
 <tr>
-<td>AnimateBase</td>
+<td>Animate Base</td>
 <td>The core animation component which other animation components extend.</td>
 </tr>
 <tr>
@@ -1016,12 +1014,14 @@ such as the <code>Animate</code> component.</p>
 <h3 id="move-point-to-point">Move Point To Point<a class="headerlink" href="#move-point-to-point" title="Permanent link">#</a></h3>
 <p>The component moves the animated <code>GameObject</code> from one location to another location.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/move-point-to-point.png"><img alt="Move Point to Point component" class="component-example" src="../images/devkit/components/move-point-to-point.png" /></a></p>
-<h3 id="on-collision-animate">On Collision Animate<a class="headerlink" href="#on-collision-animate" title="Permanent link">#</a></h3>
+<h3 id="on-collision-animate">On Collision → Animate<a class="headerlink" href="#on-collision-animate" title="Permanent link">#</a></h3>
 <p>The component is used to apply animation configuration from an <code>AnimationSettings</code> component
-to the animated <code>GameObject</code>. The <code>AnimationSettings</code> can either come from the colliding <code>GameObject</code> or be explicitly 
-specified in the inspector. </p>
+to the animated <code>GameObject</code>. </p>
+<p>The <code>AnimationSettings</code> can either come from the colliding <code>GameObject</code> (if it has an <code>AnimationSettings</code> component)...</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-animate.png"><img alt="On Collision Animate component" class="component-example" src="../images/devkit/components/on-collision-animate.png" /></a></p>
-<h3 id="on-collision-move-to">On Collision Move To<a class="headerlink" href="#on-collision-move-to" title="Permanent link">#</a></h3>
+<p>...or be explicitly set in the inspector.</p>
+<p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-animate-non-collision-animation-settings.png"><img alt="On Collision Animate with Non-collision Settings component" class="component-example" src="../images/devkit/components/on-collision-animate-non-collision-animation-settings.png" /></a></p>
+<h3 id="on-collision-move-to">On Collision → Move To<a class="headerlink" href="#on-collision-move-to" title="Permanent link">#</a></h3>
 <p>The component moves the component's <code>GameObject</code> toward the <code>GameObject</code> it collided with.
 Colliding objects are filterable by their tag.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-move-to.png"><img alt="On Collision Move To component" class="component-example" src="../images/devkit/components/on-collision-move-to.png" /></a></p>
@@ -1051,11 +1051,11 @@ This component is mainly for to demonstrate how color tweening works.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="on-collision-apply-transform">On Collision Apply Transform<a class="headerlink" href="#on-collision-apply-transform" title="Permanent link">#</a></h3>
+<h3 id="on-collision-apply-transform">On Collision → Apply Transform<a class="headerlink" href="#on-collision-apply-transform" title="Permanent link">#</a></h3>
 <p>This component sets the colliding <code>Transform</code> to the specified <code>Transform</code>'s position, scale, and rotation.
 This is useful for "teleporting" a <code>GameObject</code>, e.g. when a player falls to its death. </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-apply-transform.png"><img alt="On Collision Apply Transform component" class="component-example" src="../images/devkit/components/on-collision-apply-transform.png" /></a></p>
-<h3 id="on-collision-set-parent">On Collision Set Parent<a class="headerlink" href="#on-collision-set-parent" title="Permanent link">#</a></h3>
+<h3 id="on-collision-set-parent">On Collision → Set Parent<a class="headerlink" href="#on-collision-set-parent" title="Permanent link">#</a></h3>
 <p>This component simply sets the colliding <code>GameObject</code>'s parent.
 This is useful for implementing moving platforms that allow the player to move with the platform.  </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-set-parent.png"><img alt="On Collision Set Parent component" class="component-example" src="../images/devkit/components/on-collision-set-parent.png" /></a></p>
@@ -1094,7 +1094,7 @@ The simple implementation of running an jumping is suitable for prototypes, demo
 <p>This component is used extensively by the <code>DevKit</code> animation API.
 It should only ever be attached to a <code>GameObject</code> programmatically and for a specific use case where coroutines need to be run outside of a <code>MonoBehavior</code>.  </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/coroutine-proxy.png"><img alt="Coroutine Proxy component" class="component-example" src="../images/devkit/components/coroutine-proxy.png" /></a></p>
-<h3 id="on-collision-destroy">On Collision Destroy<a class="headerlink" href="#on-collision-destroy" title="Permanent link">#</a></h3>
+<h3 id="on-collision-destroy">On Collision → Destroy<a class="headerlink" href="#on-collision-destroy" title="Permanent link">#</a></h3>
 <p>This component simply destroys a component when it is collided with. </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-destroy.png"><img alt="On Collision Destroy component" class="component-example" src="../images/devkit/components/on-collision-destroy.png" /></a></p>
 <h3 id="subject-base">Subject Base<a class="headerlink" href="#subject-base" title="Permanent link">#</a></h3>
@@ -1139,6 +1139,7 @@ It should only ever be attached to a <code>GameObject</code> programmatically an
 </td></tr></table>
 
 <h4 id="subject-options">Subject Options<a class="headerlink" href="#subject-options" title="Permanent link">#</a></h4>
+<p>A <code>Subject</code> renders as a dropdown in the inspector with a set of options that defines which <code>GameObject</code> is referenced.  </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/subject-base-example.png"><img alt="Subject-based example component" class="component-example" src="../images/devkit/components/subject-base-example.png" /></a></p>
 <table>
 <thead>
@@ -1256,7 +1257,7 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </code></pre></div>
 </td></tr></table>
 
-<p>An action can be called in the builder's run method to, for example, set the <code>GameObject</code> to inactive (or some other operation):</p>
+<p>An action can be called in the builder's run method. For example, to set the <code>GameObject</code> to inactive (or some other operation):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
@@ -1296,7 +1297,7 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </code></pre></div>
 </td></tr></table>
 
-<p><code>Quaternion</code> rotation of a <code>Transform</code> is also possible:</p>
+<p>Rotation with a <code>Quaternion</code> is also possible:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1354,14 +1355,12 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 <h3 id="customizing-animations">Customizing Animations<a class="headerlink" href="#customizing-animations" title="Permanent link">#</a></h3>
 <p>A custom animation duration and <code>Ease</code> can be used in all of the tween animation API operations.</p>
 <h4 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h4>
-<p>The length of a tween's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration :</p>
+<p>The length of a tween's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">animationDuration</span> <span class="p">=</span> <span class="m">2.0f</span><span class="p">;</span> <span class="c1">// 2 seconds</span>
-
-<span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">(</span><span class="n">animationDuration</span><span class="p">)</span>
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// All tween animations default to 2 seconds.</span>
+<span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">(</span><span class="m">2.0f</span><span class="p">)</span>
     <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
     <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
 </code></pre></div>
@@ -1599,8 +1598,6 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
       </script>
       
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
       
