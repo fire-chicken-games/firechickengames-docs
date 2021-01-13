@@ -352,8 +352,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#programmatic-access" class="md-nav__link">
-    Programmatic Access
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
@@ -817,8 +817,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#programmatic-access" class="md-nav__link">
-    Programmatic Access
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
@@ -916,8 +916,8 @@
 <p>DevKit provides a variety of animation and transform-manipulation components, 
 as well as a <code>GameObject</code> abstraction component to add flexibility to the asset's various components. 
 The components are built on top of an extensible programmatic API.</p>
-<p>A simple <code>Character</code> component is also included for demonstration purposes in the asset's example scenes.  </p>
-<p>Several models, prefabs, materials, textures, and shaders are also included for demonstration purposes as well.</p>
+<p>A simple <code>Character</code> component is also included and used in the asset's example scenes.<br />
+Several models, prefabs, materials, textures, and shaders are also included for demo purposes as well.</p>
 <h2 id="animation-components">Animation Components<a class="headerlink" href="#animation-components" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -941,7 +941,7 @@ The components are built on top of an extensible programmatic API.</p>
 </tr>
 <tr>
 <td>Follow</td>
-<td>This component moves a <code>GameObject</code> along the the <code>x</code>, <code>y</code>, and/or <code>z</code> dimensions of another <code>GameObject</code>.</td>
+<td>This component moves a <code>GameObject</code> along the <code>x</code>, <code>y</code>, and/or <code>z</code> dimensions of another <code>GameObject</code>.</td>
 </tr>
 <tr>
 <td>Move Point To Point</td>
@@ -978,16 +978,16 @@ It cannot be added directly to a <code>GameObject</code>.</p>
 
 <p>The component provides an extensible base implementation that other animation components use to accomplish specific animation effects.</p>
 <h3 id="animate">Animate<a class="headerlink" href="#animate" title="Permanent link">#</a></h3>
-<p>The component is suitable for providing a simple one-off animation.</p>
+<p>The component can provide a simple one-off animation.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/animate.png"><img alt="Animate component" class="component-example" src="../images/devkit/components/animate.png" /></a></p>
 <p>Or a series of animations.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/animate-many.png"><img alt="Animate component with multiple animations" class="component-example" src="../images/devkit/components/animate-many.png" /></a></p>
 <h3 id="animation-settings">Animation Settings<a class="headerlink" href="#animation-settings" title="Permanent link">#</a></h3>
-<p>The component is used to visually configure an animation that can be applied to certain other components,
-such as the <code>Animate</code> component.</p>
+<p>The component is used to visually configure an animation. 
+Certain other components, such as the <code>Animate</code> component, use this component to define which animations they run.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/animation-settings.png"><img alt="Animate Settings component" class="component-example" src="../images/devkit/components/animation-settings.png" /></a></p>
 <h3 id="follow">Follow<a class="headerlink" href="#follow" title="Permanent link">#</a></h3>
-<p>This component moves a <code>GameObject</code> along the the <code>x</code>, <code>y</code>, and/or <code>z</code> dimensions of another <code>GameObject</code>.</p>
+<p>This component moves a <code>GameObject</code> along the <code>x</code>, <code>y</code>, and/or <code>z</code> dimensions of another <code>GameObject</code>.</p>
 <table>
 <thead>
 <tr>
@@ -998,15 +998,15 @@ such as the <code>Animate</code> component.</p>
 <tbody>
 <tr>
 <td>Smooth</td>
-<td>Smooths the follow motion using Unity's <a href="https://docs.unity3d.com/ScriptReference/Vector3.SmoothDamp.html">Vector3.SmoothDamp</a> function - useful for a follow camera.</td>
+<td>Smooths the follow motion using Unity's <a href="https://docs.unity3d.com/ScriptReference/Vector3.SmoothDamp.html" target="_blank">Vector3.SmoothDamp</a> function - useful for a follow camera.</td>
 </tr>
 <tr>
 <td>Ease</td>
-<td>Use a <code>DevKit</code> tween animation to transition.</td>
+<td>Use a <code>DevKit</code> tween animation to animate the follow motion.</td>
 </tr>
 <tr>
 <td>One To One</td>
-<td>Lock the position of the following <code>GameObject</code>, with no smoothing, to the <code>GameObject</code> it is following.</td>
+<td>Lock the position of the following <code>GameObject</code>, with no smoothing or animation, to the <code>GameObject</code> it is following.</td>
 </tr>
 </tbody>
 </table>
@@ -1027,7 +1027,7 @@ Colliding objects are filterable by their tag.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-move-to.png"><img alt="On Collision Move To component" class="component-example" src="../images/devkit/components/on-collision-move-to.png" /></a></p>
 <h3 id="recolor-randomly">Recolor Randomly<a class="headerlink" href="#recolor-randomly" title="Permanent link">#</a></h3>
 <p>The component changes the color of a material to another random color.
-This component is mainly for to demonstrate how color tweening works.</p>
+This component is mainly for to demonstrate how to animate a color change.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/recolor-randomly.png"><img alt="Recolor Randomly component" class="component-example" src="../images/devkit/components/recolor-randomly.png" /></a></p>
 <h3 id="rotate-perpetually">Rotate Perpetually<a class="headerlink" href="#rotate-perpetually" title="Permanent link">#</a></h3>
 <p>The component simply rotates a <code>GameObject</code> indefinitely. </p>
@@ -1043,17 +1043,17 @@ This component is mainly for to demonstrate how color tweening works.</p>
 <tbody>
 <tr>
 <td>On Collision → Apply Transform</td>
-<td>Apply the position, scale, and rotation of the colliding <code>GameObject</code> when collided with.</td>
+<td>Apply a <code>Transform</code>'s position, scale, and rotation to a colliding <code>GameObject</code>.</td>
 </tr>
 <tr>
 <td>On Collision → Set Parent</td>
-<td>Set the parent of the colliding <code>GameObject</code> when collided with.</td>
+<td>Set the parent <code>GameObject</code> of the colliding <code>GameObject</code>.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="on-collision-apply-transform">On Collision → Apply Transform<a class="headerlink" href="#on-collision-apply-transform" title="Permanent link">#</a></h3>
 <p>This component sets the colliding <code>Transform</code> to the specified <code>Transform</code>'s position, scale, and rotation.
-This is useful for "teleporting" a <code>GameObject</code>, e.g. when a player falls to its death. </p>
+This is useful for "teleporting" a <code>GameObject</code>, e.g. when a player's character falls to its death. </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-apply-transform.png"><img alt="On Collision Apply Transform component" class="component-example" src="../images/devkit/components/on-collision-apply-transform.png" /></a></p>
 <h3 id="on-collision-set-parent">On Collision → Set Parent<a class="headerlink" href="#on-collision-set-parent" title="Permanent link">#</a></h3>
 <p>This component simply sets the colliding <code>GameObject</code>'s parent.
@@ -1078,27 +1078,59 @@ This is useful for implementing moving platforms that allow the player to move w
 </tr>
 <tr>
 <td>On Collision → Destroy</td>
-<td>Destroy a game object when collided with.</td>
+<td>Destroy a <code>GameObject</code> when collided with.</td>
 </tr>
 <tr>
 <td>Subject Base</td>
-<td>An abstract component that adds a simple, reusable mechanism for selecting a game object for the child component.</td>
+<td>An abstract component that adds a simple, reusable mechanism for selecting a <code>GameObject</code> for the child component.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="character">Character<a class="headerlink" href="#character" title="Permanent link">#</a></h3>
-<p>This component a player to control an animated humanoid character model.
-The simple implementation of running an jumping is suitable for prototypes, demonstration, testing and simple platformer games.   </p>
+<p>This component allows a player to control an animated humanoid character model.
+The simple implementation of running and jumping is suitable for prototypes, demonstration, testing and simple platformer games.   </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/character.png"><img alt="Character component" class="component-example" src="../images/devkit/components/character.png" /></a></p>
 <h3 id="coroutine-proxy">Coroutine Proxy<a class="headerlink" href="#coroutine-proxy" title="Permanent link">#</a></h3>
 <p>This component is used extensively by the <code>DevKit</code> animation API.
-It should only ever be attached to a <code>GameObject</code> programmatically and for a specific use case where coroutines need to be run outside of a <code>MonoBehavior</code>.  </p>
+It should only ever be attached to a <code>GameObject</code> programmatically and for the specific use-case where coroutines need to be run outside of a <code>MonoBehavior</code>.  </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/coroutine-proxy.png"><img alt="Coroutine Proxy component" class="component-example" src="../images/devkit/components/coroutine-proxy.png" /></a></p>
 <h3 id="on-collision-destroy">On Collision → Destroy<a class="headerlink" href="#on-collision-destroy" title="Permanent link">#</a></h3>
-<p>This component simply destroys a component when it is collided with. </p>
+<p>This component simply destroys a <code>GameObject</code> when a collision occurs. </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/on-collision-destroy.png"><img alt="On Collision Destroy component" class="component-example" src="../images/devkit/components/on-collision-destroy.png" /></a></p>
 <h3 id="subject-base">Subject Base<a class="headerlink" href="#subject-base" title="Permanent link">#</a></h3>
-<p>Using the <code>SubjectBase</code> component is as easy as extending your custom component class with it:</p>
+<p>This is an abstract component that other components extend.
+It provides a way to reference a <code>GameObject</code> other than the one a derived component is attached to.
+This adds flexibility when creating components found in <code>DevKit</code> and custom components that depend on <code>DevKit</code>. </p>
+<h4 id="subject-options">Subject Options<a class="headerlink" href="#subject-options" title="Permanent link">#</a></h4>
+<p>A <code>Subject</code> renders as a dropdown in the inspector with a set of options that defines which <code>GameObject</code> is referenced.  </p>
+<table>
+<thead>
+<tr>
+<th>Subject Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game Object</td>
+<td>An explicitly specified <code>GameObject</code>.</td>
+</tr>
+<tr>
+<td>Self</td>
+<td>The <code>GameObject</code> the component is attached to.</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>The parent <code>GameObject</code> of the <code>GameObject</code> the component is attached to. Note that this will be <code>null</code> for a <code>GameObject</code> at the root of the scene.</td>
+</tr>
+<tr>
+<td>Player</td>
+<td>The first available <code>GameObject</code> with the "Player" tag.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h4>
+<p>Using the <code>SubjectBase</code> component is as easy as extending a custom component class with it:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Components</span><span class="p">;</span>
@@ -1107,7 +1139,9 @@ It should only ever be attached to a <code>GameObject</code> programmatically an
 </code></pre></div>
 </td></tr></table>
 
-<p>Though helpful, the base class is not necessary to use the <code>Subject</code> field:</p>
+<p>This produces a custom component with a single <code>subject</code> field:</p>
+<p><a data-lightbox="component-example" href="../images/devkit/components/subject-base-example.png"><img alt="Subject-based example component" class="component-example" src="../images/devkit/components/subject-base-example.png" /></a></p>
+<p>Though helpful, the base class is not necessary to use a <code>Subject</code> field:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1138,36 +1172,6 @@ It should only ever be attached to a <code>GameObject</code> programmatically an
 </code></pre></div>
 </td></tr></table>
 
-<h4 id="subject-options">Subject Options<a class="headerlink" href="#subject-options" title="Permanent link">#</a></h4>
-<p>A <code>Subject</code> renders as a dropdown in the inspector with a set of options that defines which <code>GameObject</code> is referenced.  </p>
-<p><a data-lightbox="component-example" href="../images/devkit/components/subject-base-example.png"><img alt="Subject-based example component" class="component-example" src="../images/devkit/components/subject-base-example.png" /></a></p>
-<table>
-<thead>
-<tr>
-<th>Subject Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GameObject</td>
-<td>An explicitly specified <code>GameObject</code>.</td>
-</tr>
-<tr>
-<td>Self</td>
-<td>The <code>GameObject</code> the component is attached to.</td>
-</tr>
-<tr>
-<td>Parent</td>
-<td>The parent <code>GameObject</code> of the <code>GameObject</code> the component is attached to. Note that this will be <code>null</code> for a <code>GameObject</code> at the root of the scene.</td>
-</tr>
-<tr>
-<td>Player</td>
-<td>The first available <code>GameObject</code> with the "Player" tag.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="programmatic-access">Programmatic Access<a class="headerlink" href="#programmatic-access" title="Permanent link">#</a></h4>
 <p>Accessing the <code>Subject</code> in the <code>GameObject</code> via the <code>subject.GameObject</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">gameObjectName</span> <span class="p">=</span> <span class="n">subject</span><span class="p">.</span><span class="n">GameObject</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
 </code></pre></div>
