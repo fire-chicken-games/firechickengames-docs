@@ -1233,9 +1233,9 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 <p>The animation API uses a builder pattern to animate a <code>GameObject</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">tween</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">();</span>
-<span class="n">tween</span><span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
-<span class="n">tween</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">var</span> <span class="n">tweenBuilder</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">();</span>
+<span class="n">tweenBuilder</span><span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="n">tweenBuilder</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
 </code></pre></div>
 </td></tr></table>
 
@@ -1248,7 +1248,7 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </code></pre></div>
 </td></tr></table>
 
-<p>Method calls can be chained together <code>GameObject</code>:</p>
+<p>Method calls can be chained together:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1261,7 +1261,8 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </code></pre></div>
 </td></tr></table>
 
-<p>An action can be called in the builder's run method. For example, to set the <code>GameObject</code> to inactive (or some other operation):</p>
+<p>An action can be called in the builder's run method. 
+For example, to set the <code>GameObject</code> to inactive (or some other operation):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
@@ -1281,7 +1282,7 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </code></pre></div>
 </td></tr></table>
 
-<p>A third parameter combination exists for the <code>Run</code> method that allows for sequential tweens and:</p>
+<p>A third parameter combination exists for the <code>Run</code> method that allows for sequential tweens and a callback function when the animation completes:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1292,28 +1293,13 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </code></pre></div>
 </td></tr></table>
 
-<p>Shortcuts to move, scale, and rotate a <code>Transform</code> if the builder pattern is not desirable, are also available:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
-<span class="n">transform</span><span class="p">.</span><span class="n">TweenScale</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
-<span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
-</code></pre></div>
-</td></tr></table>
-
-<p>Rotation with a <code>Quaternion</code> is also possible:</p>
+<p>Also available are shortcuts to move, scale, and rotate a <code>Transform</code> if the builder pattern is not desirable:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">()</span>
-    <span class="p">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
-    <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
-
-<span class="c1">// or...</span>
-
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+<span class="n">transform</span><span class="p">.</span><span class="n">TweenScale</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
+<span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
 <span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">180</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
 </code></pre></div>
 </td></tr></table>
