@@ -916,10 +916,10 @@
                 
                 <p>Release: 0.1.0</p>
 <p>DevKit provides a variety of animation and transform-manipulation components, 
-as well as a <code>GameObject</code> abstraction component to add flexibility to the asset's other components.</p>
-<p>A simple <code>Character</code> component is also included for demonstration purposes in the asset's included scenes.  </p>
-<p>The components are built on top of an extensible programmatic API.</p>
-<p>Several models, prefabs, materials, textures, and shaders are also included for demonstration purposes.</p>
+as well as a <code>GameObject</code> abstraction component to add flexibility to the asset's various components. 
+The components are built on top of an extensible programmatic API.</p>
+<p>A simple <code>Character</code> component is also included for demonstration purposes in the asset's example scenes.  </p>
+<p>Several models, prefabs, materials, textures, and shaders are also included for demonstration purposes as well.</p>
 <h2 id="animation-components">Animation Components<a class="headerlink" href="#animation-components" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -939,22 +939,22 @@ as well as a <code>GameObject</code> abstraction component to add flexibility to
 </tr>
 <tr>
 <td>Animation Settings</td>
-<td>Contains purely properties that define a set of animations - used to configure other components.</td>
+<td>Contains properties that define a set of animations used to configure other components.</td>
 </tr>
 <tr>
 <td>Follow</td>
-<td>Move a <code>GameObject</code> along the the X, Y, and/or Z dimensions of another <code>GameObject</code>.</td>
+<td>This component moves a <code>GameObject</code> along the the <code>x</code>, <code>y</code>, and/or <code>z</code> dimensions of another <code>GameObject</code>.</td>
 </tr>
 <tr>
 <td>Move Point To Point</td>
 <td>Moves a <code>GameObject</code> from one location to another location.</td>
 </tr>
 <tr>
-<td>On Collision Animate</td>
+<td>On Collision → Animate</td>
 <td>Animates a <code>GameObject</code> when collided with.</td>
 </tr>
 <tr>
-<td>On Collision Move To</td>
+<td>On Collision → Move To</td>
 <td>Moves a <code>GameObject</code> to the location of another <code>GameObject</code>.</td>
 </tr>
 <tr>
@@ -963,12 +963,13 @@ as well as a <code>GameObject</code> abstraction component to add flexibility to
 </tr>
 <tr>
 <td>Rotate Perpetually</td>
-<td>Rotates a <code>GameObject</code> indefinitely.</td>
+<td>Continually rotates a <code>GameObject</code>.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="animationbase">AnimationBase<a class="headerlink" href="#animationbase" title="Permanent link">#</a></h3>
-<p>This is an abstract component that other animation components inherit:</p>
+<p>This is an abstract component that other animation components inherit.
+It cannot be added directly to a <code>GameObject</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Components</span><span class="p">;</span>
@@ -977,37 +978,37 @@ as well as a <code>GameObject</code> abstraction component to add flexibility to
 </code></pre></div>
 </td></tr></table>
 
-<p>It provides an extensible base implementation that other animation components use to accomplish specific animation effects.</p>
+<p>The component provides an extensible base implementation that other animation components use to accomplish specific animation effects.</p>
 <h3 id="animate">Animate<a class="headerlink" href="#animate" title="Permanent link">#</a></h3>
 <p>The component is suitable for providing a simple one-off animation.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/animate.png"><img alt="Animate component" class="component-example" src="../images/devkit/components/animate.png" /></a></p>
 <p>Or a series of animations.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/animate-many.png"><img alt="Animate component with multiple animations" class="component-example" src="../images/devkit/components/animate-many.png" /></a></p>
 <h3 id="animation-settings">Animation Settings<a class="headerlink" href="#animation-settings" title="Permanent link">#</a></h3>
-<p>The component is used to visually configure an animation that can be applied by another component,
+<p>The component is used to visually configure an animation that can be applied to certain other components,
 such as the <code>Animate</code> component.</p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/animation-settings.png"><img alt="Animate Settings component" class="component-example" src="../images/devkit/components/animation-settings.png" /></a></p>
 <h3 id="follow">Follow<a class="headerlink" href="#follow" title="Permanent link">#</a></h3>
-<p>The component move a <code>GameObject</code> along the the X, Y, and/or Z dimensions of another game object.</p>
+<p>This component moves a <code>GameObject</code> along the the <code>x</code>, <code>y</code>, and/or <code>z</code> dimensions of another <code>GameObject</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Movement Option</th>
+<th>Animation Type Option</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Smooth</td>
-<td>This option uses .</td>
+<td>Smooths the follow motion using Unity's <a href="https://docs.unity3d.com/ScriptReference/Vector3.SmoothDamp.html">Vector3.SmoothDamp</a> function - useful for a follow camera.</td>
 </tr>
 <tr>
 <td>Ease</td>
-<td>The <code>GameObject</code> the component is attached to.</td>
+<td>Use a <code>DevKit</code> tween animation to transition.</td>
 </tr>
 <tr>
 <td>One To One</td>
-<td>The parent <code>GameObject</code> of the <code>GameObject</code> the component is attached to. Note that this will be <code>null</code> for a <code>GameObject</code> at the root of the scene.</td>
+<td>Lock the position of the following <code>GameObject</code>, with no smoothing, to the <code>GameObject</code> it is following.</td>
 </tr>
 </tbody>
 </table>
@@ -1041,11 +1042,11 @@ This component is mainly for to demonstrate how color tweening works.</p>
 </thead>
 <tbody>
 <tr>
-<td>On Collision Apply Transform</td>
+<td>On Collision → Apply Transform</td>
 <td>Apply the position, scale, and rotation of the colliding <code>GameObject</code> when collided with.</td>
 </tr>
 <tr>
-<td>On Collision Set Parent</td>
+<td>On Collision → Set Parent</td>
 <td>Set the parent of the colliding <code>GameObject</code> when collided with.</td>
 </tr>
 </tbody>
@@ -1076,7 +1077,7 @@ This is useful for implementing moving platforms that allow the player to move w
 <td>Useful for running coroutines outside of Unity components.</td>
 </tr>
 <tr>
-<td>On Collision Destroy</td>
+<td>On Collision → Destroy</td>
 <td>Destroy a game object when collided with.</td>
 </tr>
 <tr>
