@@ -274,15 +274,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#animationbase" class="md-nav__link">
-    AnimationBase
+  <a href="#animate" class="md-nav__link">
+    Animate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#animate" class="md-nav__link">
-    Animate
+  <a href="#animation-base" class="md-nav__link">
+    Animation Base
   </a>
   
 </li>
@@ -739,15 +739,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#animationbase" class="md-nav__link">
-    AnimationBase
+  <a href="#animate" class="md-nav__link">
+    Animate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#animate" class="md-nav__link">
-    Animate
+  <a href="#animation-base" class="md-nav__link">
+    Animation Base
   </a>
   
 </li>
@@ -913,13 +913,17 @@
                   <h1>DevKit</h1>
                 
                 <p>Release: 0.1.0</p>
-<p>DevKit provides a variety of animation and transform-manipulation components, 
-as well as a <code>GameObject</code> abstraction component to add flexibility to the asset's various components. 
-The components are built on top of an extensible programmatic API.</p>
-<p>A simple <code>Character</code> component is also included and used in the asset's example scenes.<br />
-Several models, prefabs, materials, textures, and shaders are also included for demo purposes as well.</p>
+<p>DevKit is a component and API game development toolkit.
+The goal of the asset is to provide stable, reusable boiler-plate code and component building blocks
+that developers can plug into their project to reduce development time while adding polish
+(and extend if desired).</p>
+<p>A variety of animation and transform-manipulation components are included.
+The components are built on top of an extensible programmatic API (full source code included!)</p>
+<p>The asset's over 100 prefabs, along with a simple character controller, are used in the provided example scenes to demonstrate DevKit's components.
+The average polygon count per-model is 150.</p>
 <h2 id="animation-api">Animation API<a class="headerlink" href="#animation-api" title="Permanent link">#</a></h2>
 <p>The <code>DevKit</code> animation API allows for convenient animation of <code>Transform</code>, <code>RectTransform</code>, and <code>Renderer</code> components via C# extension methods.</p>
+<p>Out-of-the-box, the animation API can be used to move, scale, rotate, resize (for RectTransforms), and recolor (for Renderers) with a few simple lines of code.</p>
 <p>To get started, be sure to import the <code>Tweening</code> namespace:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Tweening</span><span class="p">;</span> 
 </code></pre></div>
@@ -1165,6 +1169,7 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are 
 </td></tr></table>
 
 <h2 id="animation-components">Animation Components<a class="headerlink" href="#animation-components" title="Permanent link">#</a></h2>
+<p>The DevKit animation components are build using the <a href="https://docs.firechickengames.com/devkit/#animation-api">animation API</a> .</p>
 <table>
 <thead>
 <tr>
@@ -1174,12 +1179,12 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are 
 </thead>
 <tbody>
 <tr>
-<td>Animate Base</td>
-<td>The core animation component which other animation components extend.</td>
-</tr>
-<tr>
 <td>Animate</td>
 <td>Animates a <code>GameObject</code> with one or more <code>Animation Settings</code>.</td>
+</tr>
+<tr>
+<td>Animate Base</td>
+<td>The core animation component which other animation components extend.</td>
 </tr>
 <tr>
 <td>Animation Settings</td>
@@ -1211,7 +1216,12 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are 
 </tr>
 </tbody>
 </table>
-<h3 id="animationbase">AnimationBase<a class="headerlink" href="#animationbase" title="Permanent link">#</a></h3>
+<h3 id="animate">Animate<a class="headerlink" href="#animate" title="Permanent link">#</a></h3>
+<p>The component can provide a simple one-off animation.</p>
+<p><a data-lightbox="component-example" href="../images/devkit/components/animate.png"><img alt="Animate component" class="component-example" src="../images/devkit/components/animate.png" /></a></p>
+<p>Or a series of animations.</p>
+<p><a data-lightbox="component-example" href="../images/devkit/components/animate-many.png"><img alt="Animate component with multiple animations" class="component-example" src="../images/devkit/components/animate-many.png" /></a></p>
+<h3 id="animation-base">Animation Base<a class="headerlink" href="#animation-base" title="Permanent link">#</a></h3>
 <p>This is an abstract component that other animation components inherit.
 It cannot be added directly to a <code>GameObject</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1223,11 +1233,6 @@ It cannot be added directly to a <code>GameObject</code>.</p>
 </td></tr></table>
 
 <p>The component provides an extensible base implementation that other animation components use to accomplish specific animation effects.</p>
-<h3 id="animate">Animate<a class="headerlink" href="#animate" title="Permanent link">#</a></h3>
-<p>The component can provide a simple one-off animation.</p>
-<p><a data-lightbox="component-example" href="../images/devkit/components/animate.png"><img alt="Animate component" class="component-example" src="../images/devkit/components/animate.png" /></a></p>
-<p>Or a series of animations.</p>
-<p><a data-lightbox="component-example" href="../images/devkit/components/animate-many.png"><img alt="Animate component with multiple animations" class="component-example" src="../images/devkit/components/animate-many.png" /></a></p>
 <h3 id="animation-settings">Animation Settings<a class="headerlink" href="#animation-settings" title="Permanent link">#</a></h3>
 <p>The component is used to visually configure an animation. 
 Certain other components, such as the <code>Animate</code> component, use this component to define which animations they run.</p>
@@ -1316,7 +1321,7 @@ This is useful for implementing moving platforms that allow the player to move w
 <tbody>
 <tr>
 <td>Character</td>
-<td>Used to animate a bare-bones character - useful for simple prototypes/demonstrations.</td>
+<td>Animate a bare-bones character - useful for simple prototypes/demonstrations.</td>
 </tr>
 <tr>
 <td>Coroutine Proxy</td>
