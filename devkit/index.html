@@ -1346,19 +1346,18 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 <h3 id="customizing-animations">Customizing Animations<a class="headerlink" href="#customizing-animations" title="Permanent link">#</a></h3>
 <p>A custom animation duration and <code>Ease</code> can be used in all of the animation API operations.</p>
 <h4 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h4>
-<p>The length of a tween's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration:</p>
+<p>The amount of time of the animation's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// All tween animations default to 2 seconds.</span>
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// All tween animations default to 2 seconds.</span>
 <span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">(</span><span class="m">2.0f</span><span class="p">)</span>
     <span class="p">.</span><span class="n">Position</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+    <span class="p">.</span><span class="n">Rotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="m">1f</span><span class="p">)</span> <span class="c1">// Except this one that takes 1 second.</span>
     <span class="p">.</span><span class="n">Run</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
-
-<p>Alternatively, the <code>Ease</code> can be supplied to individual tween method calls, making it apply only to a specific tween:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="m">0.5f</span><span class="p">,</span> <span class="n">ease</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
 
@@ -1369,7 +1368,7 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 </td></tr></table>
 
 <p>An <code>Ease</code> has a <code>EaseFunctionType</code> and an <code>EaseDirectionType</code>. 
-The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
+The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are many ease functions to choose from.</p>
 <table>
 <thead>
 <tr>
