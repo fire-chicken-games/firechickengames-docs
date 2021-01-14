@@ -377,22 +377,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#game-objects" class="md-nav__link">
-    Game Objects
+  <a href="#animating-transforms" class="md-nav__link">
+    Animating Transforms
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ui-elements" class="md-nav__link">
-    UI Elements
+  <a href="#animating-recttransforms" class="md-nav__link">
+    Animating RectTransforms
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#materials" class="md-nav__link">
-    Materials
+  <a href="#animating-renderers" class="md-nav__link">
+    Animating Renderers
   </a>
   
 </li>
@@ -842,22 +842,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#game-objects" class="md-nav__link">
-    Game Objects
+  <a href="#animating-transforms" class="md-nav__link">
+    Animating Transforms
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ui-elements" class="md-nav__link">
-    UI Elements
+  <a href="#animating-recttransforms" class="md-nav__link">
+    Animating RectTransforms
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#materials" class="md-nav__link">
-    Materials
+  <a href="#animating-renderers" class="md-nav__link">
+    Animating Renderers
   </a>
   
 </li>
@@ -1088,7 +1088,7 @@ This is useful for implementing moving platforms that allow the player to move w
 </table>
 <h3 id="character">Character<a class="headerlink" href="#character" title="Permanent link">#</a></h3>
 <p>This component allows a player to control an animated humanoid character model.
-The simple implementation of running and jumping is suitable for prototypes, demonstration, testing and simple platformer games.   </p>
+The simple implementation of running and jumping is suitable for prototypes, demonstrations, testing, and simple platformer games.   </p>
 <p><a data-lightbox="component-example" href="../images/devkit/components/character.png"><img alt="Character component" class="component-example" src="../images/devkit/components/character.png" /></a></p>
 <h3 id="coroutine-proxy">Coroutine Proxy<a class="headerlink" href="#coroutine-proxy" title="Permanent link">#</a></h3>
 <p>This component is used extensively by the <code>DevKit</code> animation API.
@@ -1224,12 +1224,13 @@ similar to how components are retrieved in <code>MonoBehavior</code> classes:</p
 </td></tr></table>
 
 <h2 id="animation-api">Animation API<a class="headerlink" href="#animation-api" title="Permanent link">#</a></h2>
-<p>To use the animation API, be sure to import the <code>Tweening</code> namespace:</p>
+<p>The <code>DevKit</code> animation API allows for convenient animation of <code>Transform</code>, <code>RectTransform</code>, and <code>Renderer</code> components via C# extension methods.</p>
+<p>To get started, be sure to import the <code>Tweening</code> namespace:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Tweening</span><span class="p">;</span> 
 </code></pre></div>
 </td></tr></table>
 
-<h3 id="game-objects">Game Objects<a class="headerlink" href="#game-objects" title="Permanent link">#</a></h3>
+<h3 id="animating-transforms">Animating Transforms<a class="headerlink" href="#animating-transforms" title="Permanent link">#</a></h3>
 <p>The animation API uses a builder pattern to animate a <code>GameObject</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1304,7 +1305,7 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 </code></pre></div>
 </td></tr></table>
 
-<h3 id="ui-elements">UI Elements<a class="headerlink" href="#ui-elements" title="Permanent link">#</a></h3>
+<h3 id="animating-recttransforms">Animating RectTransforms<a class="headerlink" href="#animating-recttransforms" title="Permanent link">#</a></h3>
 <p>In addition to the <code>Transform</code> tween options. For example, a UI component can be rotated like a regular <code>Transform</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenRotation</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">360</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
 </code></pre></div>
@@ -1320,7 +1321,7 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 </code></pre></div>
 </td></tr></table>
 
-<h3 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">#</a></h3>
+<h3 id="animating-renderers">Animating Renderers<a class="headerlink" href="#animating-renderers" title="Permanent link">#</a></h3>
 <p>If a <code>Renderer</code> component has <code>Material</code>, the color and alpha can be animated:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1343,7 +1344,7 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 </td></tr></table>
 
 <h3 id="customizing-animations">Customizing Animations<a class="headerlink" href="#customizing-animations" title="Permanent link">#</a></h3>
-<p>A custom animation duration and <code>Ease</code> can be used in all of the tween animation API operations.</p>
+<p>A custom animation duration and <code>Ease</code> can be used in all of the animation API operations.</p>
 <h4 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h4>
 <p>The length of a tween's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1372,7 +1373,7 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Function</th>
+<th>Ease Function Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1427,7 +1428,7 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Direction</th>
+<th>Ease Direction Type</th>
 <th>Description</th>
 </tr>
 </thead>
