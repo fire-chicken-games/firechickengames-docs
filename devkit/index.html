@@ -1344,7 +1344,7 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 </td></tr></table>
 
 <h3 id="customizing-animations">Customizing Animations<a class="headerlink" href="#customizing-animations" title="Permanent link">#</a></h3>
-<p>A custom animation duration and <code>Ease</code> can be used in all of the animation API operations.</p>
+<p>A custom animation duration and ease can be used in all of the animation API operations.</p>
 <h4 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h4>
 <p>The amount of time of the animation's transition can be customized by supplying the <code>Tween</code> builder method with a custom duration:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1362,12 +1362,12 @@ For example, to set the <code>GameObject</code> to inactive (or some other opera
 </td></tr></table>
 
 <h4 id="easing">Easing<a class="headerlink" href="#easing" title="Permanent link">#</a></h4>
-<p>Be sure to import the <code>Ease</code> namespace when specifying an Ease:</p>
+<p>Be sure to import the ease namespace when specifying an Ease:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">FireChickenGames.DevKit.Tweening.Ease</span><span class="p">;</span> 
 </code></pre></div>
 </td></tr></table>
 
-<p>An <code>Ease</code> has a <code>EaseFunctionType</code> and an <code>EaseDirectionType</code>. 
+<p>An ease has a <code>EaseFunctionType</code> and an <code>EaseDirectionType</code>. 
 The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are many ease functions to choose from.</p>
 <table>
 <thead>
@@ -1403,7 +1403,7 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are 
 </tr>
 <tr>
 <td>Back</td>
-<td>Transition back beyond the start value before continuing to transition to the target value.</td>
+<td>Transition back beyond the start value before continuing to the target value.</td>
 </tr>
 <tr>
 <td>Bounce</td>
@@ -1455,7 +1455,7 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are 
 </code></pre></div>
 </td></tr></table>
 
-<p>The <code>Ease</code> can be supplied either to the builder (making it the default ease for all of the builder's tweens):</p>
+<p>The ease can be supplied either to the builder (making it the default ease for all of the builder's tweens):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">Tween</span><span class="p">(</span><span class="n">ease</span><span class="p">)</span>
@@ -1464,7 +1464,7 @@ The default <code>EaseFunctionType</code> is <code>Linear</code>, but there are 
 </code></pre></div>
 </td></tr></table>
 
-<p>Alternatively, the <code>Ease</code> can be supplied to the individual tween method calls, making it apply only to a specific tween:</p>
+<p>Alternatively, the ease can be supplied to the individual tween method calls, making it apply only to a specific tween:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">TweenPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="m">0.5f</span><span class="p">,</span> <span class="n">ease</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
