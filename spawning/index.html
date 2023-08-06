@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../devkit/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="homing_projectiles/">
+        <link rel="next" href="../devkit/">
       
       <link rel="icon" href="../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Getting Started - Documentation</title>
+        <title>Spawning for Game Creator 2 - Documentation</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dependencies" class="md-skip">
+        <a href="#spawning-for-game-creator-2" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Spawning for Game Creator 2
             
           </span>
         </div>
@@ -203,11 +203,221 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../spawning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Spawning for Game Creator 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Spawning for Game Creator 2
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spawner-component" class="md-nav__link">
+    Spawner Component
+  </a>
+  
+    <nav class="md-nav" aria-label="Spawner Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spawning" class="md-nav__link">
+    Spawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Spawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snap-to-ground" class="md-nav__link">
+    Snap to Ground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawn-by-weight" class="md-nav__link">
+    Spawn by Weight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawnable-objects" class="md-nav__link">
+    Spawnable Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    Pattern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#periodic-spawning" class="md-nav__link">
+    Periodic Spawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Periodic Spawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spawn-rate-seconds" class="md-nav__link">
+    Spawn Rate (Seconds)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-chance" class="md-nav__link">
+    Skip Chance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawn-rate-after-skip-seconds" class="md-nav__link">
+    Spawn Rate After Skip (Seconds)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respawning" class="md-nav__link">
+    Respawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Respawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    Enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooldown" class="md-nav__link">
+    Cooldown
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despawning" class="md-nav__link">
+    Despawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Despawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#despawn-by-distance" class="md-nav__link">
+    Despawn by Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-calculate-distance" class="md-nav__link">
+    Auto-calculate Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despawn-distance" class="md-nav__link">
+    Despawn Distance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-with-game-creator" class="md-nav__link">
+    Trigger with Game Creator
+  </a>
+  
+    <nav class="md-nav" aria-label="Trigger with Game Creator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spawn-instruction" class="md-nav__link">
+    Spawn Instruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despawn-instruction" class="md-nav__link">
+    Despawn Instruction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -233,16 +443,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
       
@@ -251,7 +459,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Combat for Game Creator
@@ -262,96 +470,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Getting Started
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
         Getting Started
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-included" class="md-nav__link">
-    What’s Included
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-installation" class="md-nav__link">
-    Module Installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Module Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-open-the-module-manager" class="md-nav__link">
-    Step 1: Open the Module Manager
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-enable-the-combat-module" class="md-nav__link">
-    Step 2: Enable the Combat Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-optional-install-the-combat-examples-module" class="md-nav__link">
-    Step 3 (optional): Install the Combat Examples Module
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#melee-and-shooter-module-integrations" class="md-nav__link">
-    Melee and Shooter Module Integrations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -363,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="homing_projectiles/" class="md-nav__link">
+      <a href="../combat/homing_projectiles/" class="md-nav__link">
         Homing Projectile
       </a>
     </li>
@@ -404,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="targeting/overview/" class="md-nav__link">
+      <a href="../combat/targeting/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -418,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="targeting/targeter/" class="md-nav__link">
+      <a href="../combat/targeting/targeter/" class="md-nav__link">
         Targeter
       </a>
     </li>
@@ -432,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="targeting/targetable/" class="md-nav__link">
+      <a href="../combat/targeting/targetable/" class="md-nav__link">
         Targetable
       </a>
     </li>
@@ -453,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="spawner/" class="md-nav__link">
+      <a href="../combat/spawner/" class="md-nav__link">
         Spawner
       </a>
     </li>
@@ -467,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="weapon_stashes/" class="md-nav__link">
+      <a href="../combat/weapon_stashes/" class="md-nav__link">
         Weapon Stashes
       </a>
     </li>
@@ -498,6 +621,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -506,45 +631,146 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#spawner-component" class="md-nav__link">
+    Spawner Component
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-included" class="md-nav__link">
-    What’s Included
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-installation" class="md-nav__link">
-    Module Installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Module Installation">
+    <nav class="md-nav" aria-label="Spawner Component">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-open-the-module-manager" class="md-nav__link">
-    Step 1: Open the Module Manager
+  <a href="#spawning" class="md-nav__link">
+    Spawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Spawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snap-to-ground" class="md-nav__link">
+    Snap to Ground
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-enable-the-combat-module" class="md-nav__link">
-    Step 2: Enable the Combat Module
+  <a href="#spawn-by-weight" class="md-nav__link">
+    Spawn by Weight
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-optional-install-the-combat-examples-module" class="md-nav__link">
-    Step 3 (optional): Install the Combat Examples Module
+  <a href="#spawnable-objects" class="md-nav__link">
+    Spawnable Objects
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    Pattern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#periodic-spawning" class="md-nav__link">
+    Periodic Spawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Periodic Spawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spawn-rate-seconds" class="md-nav__link">
+    Spawn Rate (Seconds)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-chance" class="md-nav__link">
+    Skip Chance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawn-rate-after-skip-seconds" class="md-nav__link">
+    Spawn Rate After Skip (Seconds)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respawning" class="md-nav__link">
+    Respawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Respawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    Enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooldown" class="md-nav__link">
+    Cooldown
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despawning" class="md-nav__link">
+    Despawning
+  </a>
+  
+    <nav class="md-nav" aria-label="Despawning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#despawn-by-distance" class="md-nav__link">
+    Despawn by Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-calculate-distance" class="md-nav__link">
+    Auto-calculate Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despawn-distance" class="md-nav__link">
+    Despawn Distance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -554,9 +780,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#melee-and-shooter-module-integrations" class="md-nav__link">
-    Melee and Shooter Module Integrations
+  <a href="#trigger-with-game-creator" class="md-nav__link">
+    Trigger with Game Creator
   </a>
+  
+    <nav class="md-nav" aria-label="Trigger with Game Creator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spawn-instruction" class="md-nav__link">
+    Spawn Instruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despawn-instruction" class="md-nav__link">
+    Despawn Instruction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -575,54 +821,90 @@
                   
 
 
-  <h1>Getting Started</h1>
-
-<p><img alt="Combat Header" src="../images/combat/splash.png" title="Combat Header" /></p>
-<p>The <strong>Combat</strong> module adds enhanced, game-ready, combat features:</p>
+<h1 id="spawning-for-game-creator-2">Spawning for Game Creator 2<a class="headerlink" href="#spawning-for-game-creator-2" title="Permanent link">#</a></h1>
+<p>A <strong>Spawner</strong> manages the creation of game objects (often enemies, loot, and visual effects like flames).</p>
+<p>The <strong>Spawner</strong> component uses object pooling to efficiently manage multiple pools of spawnable objects.</p>
+<h2 id="spawner-component">Spawner Component<a class="headerlink" href="#spawner-component" title="Permanent link">#</a></h2>
+<p>A <strong>Spawner</strong> component can be added to any game object.
+It has built in support for spawning, despawning, and respawning based on the player's interaction with and proximity from an attached collider.
+Manual control of the component via Game Creator actions is also supported.</p>
+<p><img alt="Spawner component" src="../images/spawning/spawner/spawner_component.png" title="Spawner component" /></p>
+<h3 id="spawning">Spawning<a class="headerlink" href="#spawning" title="Permanent link">#</a></h3>
+<h4 id="snap-to-ground">Snap to Ground<a class="headerlink" href="#snap-to-ground" title="Permanent link">#</a></h4>
+<p>When enabled, the Y position of the spawned object is dynamically set to the ground under the object - effectively "snapping" the object to the terrain below.
+This prevents objects from being spawned under or above uneven terrain, then hovering out of site or falling (if the spawned object has a rigid body component).</p>
+<h4 id="spawn-by-weight">Spawn by Weight<a class="headerlink" href="#spawn-by-weight" title="Permanent link">#</a></h4>
+<p>If enabled, a spawnable is randomly spawned using a simple weight-based selection formula.</p>
+<p>For example, if spawnable 1 has a weight of <code>25</code> and spawnable 2 has a weight of <code>100</code>,
+spawnable 1 will be spawned <code>20%</code> of the time and spawnable 2 will be spawned <code>80%</code> of the time.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Spawnable 1: 25 / (25 + 100) = 20%
+Spawnable 2: 100 / (25 + 100) = 80%
+</code></pre></div></td></tr></table></div>
+<h4 id="spawnable-objects">Spawnable Objects<a class="headerlink" href="#spawnable-objects" title="Permanent link">#</a></h4>
+<p>The list of <strong>spawnables</strong> defines which (and how many) objects are spawned by the <strong>Spawner</strong> component.
+If the <strong>Spawn by Weight</strong> feature is disabled, the spawnables' <strong>Weight</strong> property is disregarded.</p>
+<h4 id="pattern">Pattern<a class="headerlink" href="#pattern" title="Permanent link">#</a></h4>
+<p>Spawning can be done in a variety of patterns, relative to the position of the <strong>Spawner</strong>:</p>
 <ul>
-<li>Targeting<ul>
-<li>Proximity-based Targeting (with programmatic API, actions, and triggers).</li>
-<li>Point-and-Click Mouse Targeting.</li>
-<li>AI Targeting (requires the Behavior module). </li>
-<li>Mobile UI Button Compatibility for Accessibility Module (by Pivec Labs).</li>
-<li>Customizable Target Indicator.</li>
-<li>Targeting by Visibility.</li>
+<li><strong>Default</strong><ul>
+<li>Randomly places spawned objects in a developer designated radius around the <strong>Spawner</strong>.</li>
+<li>If the number of objects is sufficiently large and the spawn radius is too small/minimum spacing is too large, then objects that do not fit in the spawn area will not be spawned.</li>
 </ul>
 </li>
-<li>Spawn System (with optional weighted random selection).</li>
-<li>Weapon Stashes (weapon carrying/switching mechanic).</li>
-<li>Melee and Shooter Integration (requires Melee and/or Shooter modules).  </li>
-<li>Homing Projectile.</li>
-<li>Support for Destructible Targets.</li>
+<li><strong>Spiral</strong><ul>
+<li>Places spawned objects in a classic spiral pattern, with the center of the spiral originating at the <strong>Spawner</strong>.</li>
+<li>This pattern is useful for small clusters of objects, like a small group of ~5 enemies.</li>
 </ul>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h2>
-<p>Combat is an extension for <strong>Game Creator</strong>. It is required - <strong>Combat</strong> will not work without it.</p>
-<p>They can be purchased from the Unity Asset Store:</p>
-<ul>
-<li><a href="https://assetstore.unity.com/packages/templates/systems/game-creator-89443?aid=1101leteS">Game Creator</a></li>
+</li>
+<li><strong>Random with Overlap</strong><ul>
+<li>Randomly places spawned objects within a developer defined 3 dimensional area around the <strong>Spawner</strong>.</li>
+<li>The objects may (or may not) overlap, depending on object density in the spawn area size.</li>
+<li>This pattern is useful for spawning visual effects (e.g. flames, dust, etc.).</li>
 </ul>
-<p>The <strong>Melee</strong> and <strong>Shooter</strong> modules are optional dependencies. Get them here:</p>
-<ul>
-<li><a href="https://assetstore.unity.com/packages/templates/systems/melee-164145?aid=1101leteS">Melee</a></li>
-<li><a href="https://assetstore.unity.com/packages/templates/systems/shooter-155705?aid=1101leteS">Shooter</a></li>
+</li>
+<li><strong>At Spawner Origin</strong><ul>
+<li>Places all objects exactly at the <strong>Spawner's</strong> origin.</li>
+<li>This pattern is useful for spawning a single complicated prefab (rather than spawning parts of the prefab as individual spawnable items).</li>
 </ul>
-<h2 id="whats-included">What’s Included<a class="headerlink" href="#whats-included" title="Permanent link">#</a></h2>
-<ul>
-<li>Full source code.</li>
-<li>An examples module that contains scenes that demonstrate the features listed above. </li>
+</li>
 </ul>
-<h2 id="module-installation">Module Installation<a class="headerlink" href="#module-installation" title="Permanent link">#</a></h2>
-<p>After purchasing and downloading the <strong>Combat</strong> module, it must be enabled with the Game Creator Module Manager.</p>
-<h3 id="step-1-open-the-module-manager">Step 1: Open the Module Manager<a class="headerlink" href="#step-1-open-the-module-manager" title="Permanent link">#</a></h3>
-<p><img alt="Open the Module Manager" src="../images/combat/index/installation_1.png" title="Open the Module Manager" /></p>
-<h3 id="step-2-enable-the-combat-module">Step 2: Enable the Combat Module<a class="headerlink" href="#step-2-enable-the-combat-module" title="Permanent link">#</a></h3>
-<p><img alt="Enable the Combat module" src="../images/combat/index/installation_2.png" title="Enable the Combat module" /></p>
-<h3 id="step-3-optional-install-the-combat-examples-module">Step 3 (optional): Install the Combat Examples Module<a class="headerlink" href="#step-3-optional-install-the-combat-examples-module" title="Permanent link">#</a></h3>
-<p><img alt="Install the Combat Examples module" src="../images/combat/index/installation_3.png" title="Install the Combat Examples module" /></p>
-<h2 id="melee-and-shooter-module-integrations">Melee and Shooter Module Integrations<a class="headerlink" href="#melee-and-shooter-module-integrations" title="Permanent link">#</a></h2>
-<p>The <strong>Combat</strong> module provides a lightweight integration to allow seamless Shooter/Melee targeting and weapon switching if the Melee module is present.</p>
-<p>To enable the integration, simply enable the included <strong>Combat (Melee)</strong> and/or <strong>Combat (Shooter)</strong> integration modules.</p>
-<p>Note that also included are the <strong>Combat Examples (Melee)</strong> and <strong>Combat Examples (Shooter)</strong> modules that demonstrate Melee/Shooter targeting and weapon switching.</p>
+<h4 id="periodic-spawning">Periodic Spawning<a class="headerlink" href="#periodic-spawning" title="Permanent link">#</a></h4>
+<p>If enabled, the spawnables will appear periodically based on a timer.</p>
+<h5 id="spawn-rate-seconds">Spawn Rate (Seconds)<a class="headerlink" href="#spawn-rate-seconds" title="Permanent link">#</a></h5>
+<p>The number of seconds before a spawnable will appear.</p>
+<h5 id="skip-chance">Skip Chance<a class="headerlink" href="#skip-chance" title="Permanent link">#</a></h5>
+<p>The chance that nothing will appear during a spawn.</p>
+<h5 id="spawn-rate-after-skip-seconds">Spawn Rate After Skip (Seconds)<a class="headerlink" href="#spawn-rate-after-skip-seconds" title="Permanent link">#</a></h5>
+<p>The number of seconds to wait after a spawn is skipped.
+This setting, in combination with <em>Skip Chance</em> can add variability to spawning to make it feel more organic.</p>
+<h3 id="respawning">Respawning<a class="headerlink" href="#respawning" title="Permanent link">#</a></h3>
+<p>Spawnable objects can be automatically respawned either immediately after the player re-enters the spawn zone or after a developer defined delay.</p>
+<h4 id="enabled">Enabled<a class="headerlink" href="#enabled" title="Permanent link">#</a></h4>
+<p>If enabled, spawned objects will be automatically respawned when the player re-enters the spawn zone.</p>
+<h4 id="cooldown">Cooldown<a class="headerlink" href="#cooldown" title="Permanent link">#</a></h4>
+<p>If enabled, a respawn will only happen after a specified number of seconds.</p>
+<h3 id="despawning">Despawning<a class="headerlink" href="#despawning" title="Permanent link">#</a></h3>
+<h4 id="despawn-by-distance">Despawn by Distance<a class="headerlink" href="#despawn-by-distance" title="Permanent link">#</a></h4>
+<p>If enabled, spawned objects will be automatically despawned when the player leaves the spawn zone and is a set distance from the closest spawned object.</p>
+<h4 id="auto-calculate-distance">Auto-calculate Distance<a class="headerlink" href="#auto-calculate-distance" title="Permanent link">#</a></h4>
+<p>If enabled, the despawning distance will be automatically computed.
+The auto-calculated spawn distance is the radius of an attached <strong>SphereCollider</strong> or the average height/width of an attached <strong>BoxCollider</strong>.</p>
+<h4 id="despawn-distance">Despawn Distance<a class="headerlink" href="#despawn-distance" title="Permanent link">#</a></h4>
+<p>The distance the player has to travel from the <strong>Spawner's</strong> origin before the objects are automatically despawned.
+This property is disregarded if <strong>Auto-calculate Distance</strong> is enabled.</p>
+<h2 id="trigger-with-game-creator">Trigger with Game Creator<a class="headerlink" href="#trigger-with-game-creator" title="Permanent link">#</a></h2>
+<p>A <strong>Spawner</strong> can be manually controlled with the <strong>Spawn</strong> and <strong>Despawn</strong> instructions, included with the <strong>Spawning</strong> package.  </p>
+<p>Any standard Game Creator trigger can be used to invoke these instructions.</p>
+<h3 id="spawn-instruction">Spawn Instruction<a class="headerlink" href="#spawn-instruction" title="Permanent link">#</a></h3>
+<p>Select an object that has a <strong>Spawner</strong> component as the actions target.</p>
+<div class="admonition tip">
+<p class="admonition-title">Disable the <strong>Despawn by Distance</strong> option when manually controlling the Spawner with triggers/actions, or the objects will never appear to spawn.</p>
+</div>
+<p><img alt="Spawn instruction" src="../images/spawning/spawner/spawner_spawn_action.png" title="Spawn instruction" /></p>
+<h3 id="despawn-instruction">Despawn Instruction<a class="headerlink" href="#despawn-instruction" title="Permanent link">#</a></h3>
+<p>Select an object that has a <strong>Spawner</strong> component as the actions target.</p>
+<p><img alt="Despawn instruction" src="../images/spawning/spawner/spawner_despawn_action.png" title="Despawn instruction" /></p>
 
 
 
@@ -644,7 +926,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../devkit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DevKit" rel="prev">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -653,20 +935,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                DevKit
+                Welcome
               </div>
             </div>
           </a>
         
         
           
-          <a href="homing_projectiles/" class="md-footer__link md-footer__link--next" aria-label="Next: Homing Projectile" rel="next">
+          <a href="../devkit/" class="md-footer__link md-footer__link--next" aria-label="Next: DevKit" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Homing Projectile
+                DevKit
               </div>
             </div>
             <div class="md-footer__button md-icon">
